@@ -1,0 +1,99 @@
+# Partial charges of species
+species 8
+Am     core    2.220800
+Ce     core    2.220800
+Cm     core    2.220800
+Np     core    2.220800
+Pu     core    2.220800
+Th     core    2.220800
+U     core    2.220800
+O     core   -1.110400
+
+# Short range pair interations
+buck
+O     core Am     core  364.54611875 0.37738777311 0.0  0.00 11.00
+Am     core Am     core  18600.0 0.260946 0.0  0.00 11.00
+O     core Ce     core  351.341192796 0.380516580733 0.0  0.00 11.00
+Ce     core Ce     core  18600.0 0.26644 0.0  0.00 11.00
+O     core Cm     core  356.08276571 0.377487869274 0.0  0.00 11.00
+Cm     core Cm     core  18600.0 0.260946 0.0  0.00 11.00O  
+O     core Np     core  360.435650393 0.383047265 0.0  0.00 11.00
+Np     core Np     core  18600.0 0.2691864 0.0  0.00 11.00
+O     core Pu     core  527.515874446 0.379343748376 0.0  0.00 11.00
+Pu     core Pu     core  18600.0 0.263693 0.0  0.00 11.00
+O     core Th     core  315.543689163 0.395902925423 0.0  0.00 11.00
+Th     core Th     core  18600.0 0.288414 0.0  0.00 11.00
+O     core U     core  448.778865087 0.387757677453 0.0  0.00 11.00
+U     core U     core  18600.0 0.27468 0.0  0.00 11.00
+O     core O     core  830.283447557 0.352856254215 3.88437209048  0.00 11.00
+
+buck
+Ce     core Th     core  18600.0 0.2772 0.0  0.00 11.00
+Ce     core U     core  18600.0 0.2705 0.0  0.00 11.00
+Ce     core Np     core  18600.0 0.2678 0.0  0.00 11.00
+Ce     core Pu     core  18600.0 0.2651 0.0  0.00 11.00
+Ce     core Am     core  18600.0 0.2637 0.0  0.00 11.00
+Ce     core Cm     core  18600.0 0.2637 0.0  0.00 11.00
+Th     core U     core  18600.0 0.2815 0.0  0.00 11.00
+Th     core Np     core  18600.0 0.2786 0.0  0.00 11.00
+Th     core Pu     core  18600.0 0.2758 0.0  0.00 11.00
+Th     core Am     core  18600.0 0.2743 0.0  0.00 11.00
+Th     core Cm     core  18600.0 0.2743 0.0  0.00 11.00
+U     core Np     core  18600.0 0.2719 0.0  0.00 11.00
+U     core Pu     core  18600.0 0.2691 0.0  0.00 11.00
+U     core Am     core  18600.0 0.2677 0.0  0.00 11.00
+U     core Cm     core  18600.0 0.2677 0.0  0.00 11.00
+Np     core Pu     core  18600.0 0.2664 0.0  0.00 11.00
+Np     core Am     core  18600.0 0.2650 0.0  0.00 11.00
+Np     core Cm     core  18600.0 0.2650 0.0  0.00 11.00
+Pu     core Am     core  18600.0 0.2623 0.0  0.00 11.00
+Pu     core Cm     core  18600.0 0.2623 0.0  0.00 11.00
+Am     core Cm     core  18600.0 0.2609 0.0  0.00 11.00
+
+morse
+O     core Am     core  0.746683460828 1.95534017368 2.32485803  0.000 11.000
+O     core Ce     core  0.719250701502 1.86874578949 2.35603812582  0.000 11.000
+O     core Cm     core  0.76127634979 2.0806059271 2.311067032  0.000 11.000
+O     core Np     core  0.763819593636 1.84020256739 2.368376327  0.000 11.000
+O     core Pu     core  0.701852472037 1.98008035721 2.34590566108  0.000 11.000
+O     core Th     core  0.626143521663 1.85959740612 2.49788408664  0.000 11.000
+O     core U     core  0.6607973133 2.05815247834 2.38051231271  0.000 11.000
+
+# Enables definition of many-body terms
+manybody
+O     core Am     core  1.500 11.000
+Am     core Am     core  1.500 11.000
+O     core Ce    core  1.500 11.00
+Ce     core Ce    core  1.500 11.00
+O     core Cm     core  1.500 11.000
+Cm     core Cm     core  1.500 11.000
+O     core Np     core  1.500 11.000
+Np     core Np     core  1.500 11.000
+O     core Pu    core  1.500 11.00
+Pu     core Pu    core  1.500 11.00
+O     core Th    core  1.500 11.000
+Th     core Th    core  1.500 11.000
+O     core U    core  1.500 11.000
+U     core U    core  1.500 11.000
+O     core O    core  1.500 11.000
+
+# Definition of the embedded atom method
+eam_functional square_root
+Am     core         0.333280766072
+Ce     core         0.30766574471
+Cm     core         0.493619305338
+Np     core         0.343158373855
+Pu     core         2.16797427257
+Th     core         1.18482438449
+U     core         1.8061282781
+O     core         0.690017059438
+
+eam_density power  8
+Am     core         1631.09053219
+Ce     core         1556.80263774
+Cm     core         1503.7038148
+Np     core         1796.94532832
+Pu     core         3980.05798799
+Th     core         1742.62211661
+U     core         3450.99492623
+O     core         106.855913747

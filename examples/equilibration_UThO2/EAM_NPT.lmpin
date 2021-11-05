@@ -1,0 +1,59 @@
+boundary p p p
+atom_style full
+units metal
+variable THERMO_DAMP equal 0.1
+variable BARO_DAMP equal 0.5
+
+read_data ThUO2-5x5x5.lmpstruct
+
+variable O equal 1
+variable Ce equal 2
+variable Th equal 3
+variable U equal 4
+variable Np equal 5
+variable Pu equal 6
+variable Am equal 7
+variable Cm equal 8
+
+set type $O charge -1.1104
+set type ${Ce} charge 2.2208
+set type ${Th} charge 2.2208
+set type ${U} charge 2.2208
+set type ${Np} charge 2.2208
+set type ${Pu} charge 2.2208
+set type ${Am} charge 2.2208
+set type ${Cm} charge 2.2208
+
+#change_box ortho
+kspace_style pppm 1.0e-5
+
+variable SR_CUTOFF equal 11.0
+
+pair_style hybrid/overlay coul/long 11 eam/alloy
+pair_coeff   *    *    coul/long
+pair_coeff   *    *    eam/alloy  CeThUNpPuAmCmO.eam.alloy  O Ce Th U Np Pu Am Cm
+
+fix boxrelax_fix all box/relax aniso 0.0 vmax 0.001
+thermo 1
+thermo_style custom step cpu press etotal lx
+min_style cg
+min_modify line quadratic dmax 0.05
+
+#Perform minimization
+minimize 1.0e-25 1.0e-25 1000 10000
+unfix boxrelax_fix
+
+variable T equal 300.0
+
+velocity all create $T 160278
+timestep 0.002
+
+# Set-up thermostat
+fix thermostat_fix all npt temp $T $T ${THERMO_DAMP} aniso 0.0 0.0 ${BARO_DAMP}
+
+thermo_style custom step temp press etotal lx vol
+thermo 10
+
+neigh_modify delay 0 every 1 check yes
+
+run 25000
